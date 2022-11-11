@@ -188,7 +188,7 @@ public class HelpHelpAction extends GuiAction {
     // Set up MIPS help tab.  Most contents are generated from instruction set info.
     private JPanel createHelpInfoPanel() {
         JPanel helpInfo = new JPanel(new BorderLayout());
-        String helpRemarksColor = "CCFF99";
+        String helpRemarksColor = "000";
         // Introductory remarks go at the top as a label
         // TODO: update this to consider 12 and 20 bit numbers rather than 16
         String helpRemarks =
@@ -383,15 +383,15 @@ public class HelpHelpAction extends GuiAction {
         {
             setText(s);
             if (isSelected) {
-                setBackground(list.getSelectionBackground());
-                setForeground(list.getSelectionForeground());
+                // setBackground(list.getSelectionBackground());
+                // setForeground(list.getSelectionForeground());
             } else {
-                setBackground((index % 2 == 0) ? altBackgroundColor : list.getBackground());
-                setForeground(list.getForeground());
+                // setBackground((index % 2 == 0) ? altBackgroundColor : list.getBackground());
+                // setForeground(list.getForeground());
             }
             setEnabled(list.isEnabled());
-            setFont(list.getFont());
-            setOpaque(true);
+            // setFont(list.getFont());
+            // setOpaque(true);
             return this;
         }
     }

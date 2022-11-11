@@ -14,6 +14,8 @@ import rars.venus.VenusUI;
 import rars.api.Options;
 
 import javax.swing.*;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,6 +24,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Observable;
 import java.util.Observer;
+import java.awt.Color;
+import com.formdev.flatlaf.FlatDarkLaf;
 
 /*
 Copyright (c) 2003-2012,  Pete Sanderson and Kenneth Vollmar
@@ -223,13 +227,17 @@ public class Launch {
     // launching the GUI-fronted integrated development environment.
 
     private void launchIDE() {
-        // System.setProperty("apple.laf.useScreenMenuBar", "true"); // Puts RARS menu on Mac OS menu bar
+        System.setProperty("apple.laf.useScreenMenuBar", "true"); // Puts RARS menu on Mac OS menu bar
+        String title = "RARS " + Globals.version;
+        System.setProperty( "apple.awt.application.appearance", "system" );
+        System.setProperty( "apple.awt.application.name", title);
         SwingUtilities.invokeLater(
                 new Runnable() {
                     public void run() {
                         //Turn off metal's use of bold fonts
                         //UIManager.put("swing.boldMetal", Boolean.FALSE);
-                        new VenusUI("RARS " + Globals.version);
+                        FlatDarkLaf.setup();
+                        new VenusUI(title);
                     }
                 });
     }

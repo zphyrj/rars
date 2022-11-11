@@ -590,7 +590,8 @@ public class MemoryReferenceVisualization extends AbstractToolAndApplication {
          	If all 3 color components are "close" to 0x80 (midpoint - choose your tolerance),
          	you can get better contrast by adding 0x7F7F7F then ANDing with 0xFFFFFF.
          */
-            return new Color(color.getRGB() ^ 0xFFFFFF);
+            // return new Color(color.getRGB() ^ 0xFFFFFF);
+            return new Color(0xFFFFFF);
         }
     }
 

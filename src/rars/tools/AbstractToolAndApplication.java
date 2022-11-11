@@ -342,6 +342,7 @@ public abstract class AbstractToolAndApplication extends JFrame implements Tool,
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         JFileChooser fileChooser = new JFileChooser();
+                        fileChooser.setCurrentDirectory(new File("~/Documents/cse-12/zejones"));
                         JCheckBox multiFileAssembleChoose = new JCheckBox("Assemble all in selected file's directory", multiFileAssemble);
                         multiFileAssembleChoose.setToolTipText("If checked, selected file will be assembled first and all other assembly files in directory will be assembled also.");
                         fileChooser.setAccessory(multiFileAssembleChoose);

@@ -1013,20 +1013,20 @@ public class DataSegmentWindow extends JInternalFrame implements Observer {
 
             cell.setHorizontalAlignment(SwingConstants.RIGHT);
             int rowFirstAddress = Binary.stringToInt(table.getValueAt(row, ADDRESS_COLUMN).toString());
-            if (settings.getBooleanSetting(Settings.Bool.DATA_SEGMENT_HIGHLIGHTING) && addressHighlighting &&
-                    rowFirstAddress == addressRowFirstAddress && column == addressColumn) {
-                cell.setBackground(settings.getColorSettingByPosition(Settings.DATASEGMENT_HIGHLIGHT_BACKGROUND));
-                cell.setForeground(settings.getColorSettingByPosition(Settings.DATASEGMENT_HIGHLIGHT_FOREGROUND));
-                cell.setFont(settings.getFontByPosition(Settings.DATASEGMENT_HIGHLIGHT_FONT));
-            } else if (row % 2 == 0) {
-                cell.setBackground(settings.getColorSettingByPosition(Settings.EVEN_ROW_BACKGROUND));
-                cell.setForeground(settings.getColorSettingByPosition(Settings.EVEN_ROW_FOREGROUND));
-                cell.setFont(settings.getFontByPosition(Settings.EVEN_ROW_FONT));
-            } else {
-                cell.setBackground(settings.getColorSettingByPosition(Settings.ODD_ROW_BACKGROUND));
-                cell.setForeground(settings.getColorSettingByPosition(Settings.ODD_ROW_FOREGROUND));
-                cell.setFont(settings.getFontByPosition(Settings.ODD_ROW_FONT));
-            }
+            // if (settings.getBooleanSetting(Settings.Bool.DATA_SEGMENT_HIGHLIGHTING) && addressHighlighting &&
+            //         rowFirstAddress == addressRowFirstAddress && column == addressColumn) {
+            //     cell.setBackground(settings.getColorSettingByPosition(Settings.DATASEGMENT_HIGHLIGHT_BACKGROUND));
+            //     cell.setForeground(settings.getColorSettingByPosition(Settings.DATASEGMENT_HIGHLIGHT_FOREGROUND));
+            //     cell.setFont(settings.getFontByPosition(Settings.DATASEGMENT_HIGHLIGHT_FONT));
+            // } else if (row % 2 == 0) {
+            //     cell.setBackground(settings.getColorSettingByPosition(Settings.EVEN_ROW_BACKGROUND));
+            //     cell.setForeground(settings.getColorSettingByPosition(Settings.EVEN_ROW_FOREGROUND));
+            //     cell.setFont(settings.getFontByPosition(Settings.EVEN_ROW_FONT));
+            // } else {
+            //     cell.setBackground(settings.getColorSettingByPosition(Settings.ODD_ROW_BACKGROUND));
+            //     cell.setForeground(settings.getColorSettingByPosition(Settings.ODD_ROW_FOREGROUND));
+            //     cell.setFont(settings.getFontByPosition(Settings.ODD_ROW_FONT));
+            // }
             return cell;
         }
 

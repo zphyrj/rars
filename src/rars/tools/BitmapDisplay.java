@@ -543,7 +543,7 @@ public class BitmapDisplay extends AbstractToolAndApplication {
 
         // Set the grid element.
         private void setElement(int row, int column, int color) {
-            grid[row][column] = new Color(color);
+            // grid[row][column] = new Color(color);
         }
 
         // Set the grid element.

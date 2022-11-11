@@ -307,7 +307,6 @@ public class FloatRepresentation extends AbstractToolAndApplication {
         JEditorPane hexExplain = new JEditorPane("text/html", expansionFontTag + "&lt;&nbsp;&nbsp;Hexadecimal representation" + "</font>");
         hexExplain.setEditable(false);
         hexExplain.setFocusable(false);
-        hexExplain.setForeground(Color.black);
         hexExplain.setBackground(place1.getBackground());
         JEditorPane hexToBinExplain = new JEditorPane("text/html", expansionFontTag + "&lt;&nbsp;&nbsp;Each hex digit represents 4 bits" + "</font>");
         hexToBinExplain.setEditable(false);

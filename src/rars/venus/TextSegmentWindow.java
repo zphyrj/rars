@@ -817,19 +817,19 @@ public class TextSegmentWindow extends JInternalFrame implements Observer {
             Settings settings = Globals.getSettings();
             boolean highlighting = textSegment.getCodeHighlighting();
 
-            if (highlighting && textSegment.getIntCodeAddressAtRow(row) == highlightAddress) {
-                cell.setBackground(settings.getColorSettingByPosition(Settings.TEXTSEGMENT_HIGHLIGHT_BACKGROUND));
-                cell.setForeground(settings.getColorSettingByPosition(Settings.TEXTSEGMENT_HIGHLIGHT_FOREGROUND));
-                cell.setFont(settings.getFontByPosition(Settings.TEXTSEGMENT_HIGHLIGHT_FONT));
-            } else if (row % 2 == 0) {
-                cell.setBackground(settings.getColorSettingByPosition(Settings.EVEN_ROW_BACKGROUND));
-                cell.setForeground(settings.getColorSettingByPosition(Settings.EVEN_ROW_FOREGROUND));
-                cell.setFont(settings.getFontByPosition(Settings.EVEN_ROW_FONT));
-            } else {
-                cell.setBackground(settings.getColorSettingByPosition(Settings.ODD_ROW_BACKGROUND));
-                cell.setForeground(settings.getColorSettingByPosition(Settings.ODD_ROW_FOREGROUND));
-                cell.setFont(settings.getFontByPosition(Settings.ODD_ROW_FONT));
-            }
+            // if (highlighting && textSegment.getIntCodeAddressAtRow(row) == highlightAddress) {
+            //     cell.setBackground(settings.getColorSettingByPosition(Settings.TEXTSEGMENT_HIGHLIGHT_BACKGROUND));
+            //     cell.setForeground(settings.getColorSettingByPosition(Settings.TEXTSEGMENT_HIGHLIGHT_FOREGROUND));
+            //     cell.setFont(settings.getFontByPosition(Settings.TEXTSEGMENT_HIGHLIGHT_FONT));
+            // } else if (row % 2 == 0) {
+            //     cell.setBackground(settings.getColorSettingByPosition(Settings.EVEN_ROW_BACKGROUND));
+            //     cell.setForeground(settings.getColorSettingByPosition(Settings.EVEN_ROW_FOREGROUND));
+            //     cell.setFont(settings.getFontByPosition(Settings.EVEN_ROW_FONT));
+            // } else {
+            //     cell.setBackground(settings.getColorSettingByPosition(Settings.ODD_ROW_BACKGROUND));
+            //     cell.setForeground(settings.getColorSettingByPosition(Settings.ODD_ROW_FOREGROUND));
+            //     cell.setFont(settings.getFontByPosition(Settings.ODD_ROW_FONT));
+            // }
             return cell;
         }
 
@@ -846,13 +846,13 @@ public class TextSegmentWindow extends JInternalFrame implements Observer {
                     isSelected, hasFocus, row, column);
             cell.setFont(MonoRightCellRenderer.MONOSPACED_PLAIN_12POINT);
             cell.setHorizontalAlignment(SwingConstants.RIGHT);
-            if (row % 2 == 0) {
-                cell.setBackground(Globals.getSettings().getColorSettingByPosition(Settings.EVEN_ROW_BACKGROUND));
-                cell.setForeground(Globals.getSettings().getColorSettingByPosition(Settings.EVEN_ROW_FOREGROUND));
-            } else {
-                cell.setBackground(Globals.getSettings().getColorSettingByPosition(Settings.ODD_ROW_BACKGROUND));
-                cell.setForeground(Globals.getSettings().getColorSettingByPosition(Settings.ODD_ROW_FOREGROUND));
-            }
+            // if (row % 2 == 0) {
+            //     cell.setBackground(Globals.getSettings().getColorSettingByPosition(Settings.EVEN_ROW_BACKGROUND));
+            //     cell.setForeground(Globals.getSettings().getColorSettingByPosition(Settings.EVEN_ROW_FOREGROUND));
+            // } else {
+            //     cell.setBackground(Globals.getSettings().getColorSettingByPosition(Settings.ODD_ROW_BACKGROUND));
+            //     cell.setForeground(Globals.getSettings().getColorSettingByPosition(Settings.ODD_ROW_FOREGROUND));
+            // }
             return cell;
         }
     }

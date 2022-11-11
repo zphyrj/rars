@@ -163,13 +163,13 @@ public class CacheSimulator extends AbstractToolAndApplication {
                         debug = e.getStateChange() == ItemEvent.SELECTED;
                         resetLogDisplay();
                         logText.setEnabled(debug);
-                        logText.setBackground(debug ? Color.WHITE : logPanel.getBackground());
+                        // logText.setBackground(debug ? Color.WHITE : logPanel.getBackground());
                     }
                 });
         logPanel.add(logShow);
         logText = new JTextArea(5, 70);
         logText.setEnabled(debug);
-        logText.setBackground(debug ? Color.WHITE : logPanel.getBackground());
+        // logText.setBackground(debug ? Color.WHITE : logPanel.getBackground());
         logText.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
         logText.setToolTipText("Displays cache activity log if enabled");
         logScroll = new JScrollPane(logText, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);

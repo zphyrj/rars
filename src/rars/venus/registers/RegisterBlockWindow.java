@@ -248,20 +248,20 @@ public abstract class RegisterBlockWindow extends JPanel implements Observer {
                                                        boolean isSelected, boolean hasFocus, int row, int column) {
             JLabel cell = (JLabel) super.getTableCellRendererComponent(table, value,
                     isSelected, hasFocus, row, column);
-            cell.setFont(font);
-            cell.setHorizontalAlignment(alignment);
+            // cell.setFont(font);
+            // cell.setHorizontalAlignment(alignment);
             if (settings.getBooleanSetting(Settings.Bool.REGISTERS_HIGHLIGHTING) && highlighting && row == highlightRow) {
-                cell.setBackground(settings.getColorSettingByPosition(Settings.REGISTER_HIGHLIGHT_BACKGROUND));
-                cell.setForeground(settings.getColorSettingByPosition(Settings.REGISTER_HIGHLIGHT_FOREGROUND));
-                cell.setFont(settings.getFontByPosition(Settings.REGISTER_HIGHLIGHT_FONT));
+                // cell.setBackground(settings.getColorSettingByPosition(Settings.REGISTER_HIGHLIGHT_BACKGROUND));
+                // cell.setForeground(settings.getColorSettingByPosition(Settings.REGISTER_HIGHLIGHT_FOREGROUND));
+                // cell.setFont(settings.getFontByPosition(Settings.REGISTER_HIGHLIGHT_FONT));
             } else if (row % 2 == 0) {
-                cell.setBackground(settings.getColorSettingByPosition(Settings.EVEN_ROW_BACKGROUND));
-                cell.setForeground(settings.getColorSettingByPosition(Settings.EVEN_ROW_FOREGROUND));
-                cell.setFont(settings.getFontByPosition(Settings.EVEN_ROW_FONT));
+                // cell.setBackground(settings.getColorSettingByPosition(Settings.EVEN_ROW_BACKGROUND));
+                // cell.setForeground(settings.getColorSettingByPosition(Settings.EVEN_ROW_FOREGROUND));
+                // cell.setFont(settings.getFontByPosition(Settings.EVEN_ROW_FONT));
             } else {
-                cell.setBackground(settings.getColorSettingByPosition(Settings.ODD_ROW_BACKGROUND));
-                cell.setForeground(settings.getColorSettingByPosition(Settings.ODD_ROW_FOREGROUND));
-                cell.setFont(settings.getFontByPosition(Settings.ODD_ROW_FONT));
+                // cell.setBackground(settings.getColorSettingByPosition(Settings.ODD_ROW_BACKGROUND));
+                // cell.setForeground(settings.getColorSettingByPosition(Settings.ODD_ROW_FOREGROUND));
+                // cell.setFont(settings.getFontByPosition(Settings.ODD_ROW_FONT));
             }
             return cell;
         }
@@ -361,7 +361,7 @@ public abstract class RegisterBlockWindow extends JPanel implements Observer {
             regToolTips = row;
             columnToolTips = col;
             this.setRowSelectionAllowed(true); // highlights background color of entire row
-            this.setSelectionBackground(Color.GREEN);
+            // this.setSelectionBackground(Color.GREEN);
         }
 
         private String[] regToolTips;

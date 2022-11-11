@@ -2,3 +2,8 @@
 	path = src/jsoftfloat
 	url = https://github.com/thethirdone/jsoftfloat/
 	branch = submodule
+
+[submodule "src/flatlaf"]
+	path = src/flatlaf
+	url = https://github.com/JFormDesigner/FlatLaf
+	branch = submodule
