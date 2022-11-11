@@ -1,5 +1,5 @@
-RARS -- RISC-V Assembler and Runtime Simulator
-----------------------------------------------
+RARS -- RISC-V Assembler and Runtime Simulator (Now with Dark Mode!)
+--------------------------------------------------------------------
 
 RARS, the RISC-V Assembler, Simulator, and Runtime, will assemble and simulate
 the execution of RISC-V assembly language programs. Its primary goal is to be
