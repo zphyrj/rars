@@ -381,7 +381,19 @@ public class Settings extends Observable {
      * Must match key by list position.
      */
     private static String[] defaultColorSettingsValues = {
-            "0x00e0e0e0", "0", "0x00ffffff", "0", "0x00ffff99", "0", "0x0033ff00", "0", "0x0099ccff", "0", "0x0099cc55", "0", "0x00ffffff", "0x00000000", "0x00eeeeee", "0x00ccccff", "0x00000000"};
+        "0x00212324",
+        "0x00ffffff",
+        "0x0046494b",
+        "0x00ffffff",
+        "0x005c5a2b",
+        "0x00ffffff",
+        "= 0x33ff00",
+        "0x00ffffff",
+        "0x00031324",
+        "0x00ffffff",
+        "0x00283615",
+        "0x00ffffff"
+    };
 
     interface SystemColorProvider { Color getColor();}
     private SystemColorProvider[] systemColors;
