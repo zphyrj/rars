@@ -37,7 +37,7 @@ public class SyntaxUtilities {
      * @param match      The string to match
      */
     public static boolean regionMatches(boolean ignoreCase, Segment text,
-                                        int offset, String match) {
+            int offset, String match) {
         int length = offset + match.length();
         char[] textArray = text.array;
         if (length > text.offset + text.count)
@@ -65,7 +65,7 @@ public class SyntaxUtilities {
      * @param match      The character array to match
      */
     public static boolean regionMatches(boolean ignoreCase, Segment text,
-                                        int offset, char[] match) {
+            int offset, char[] match) {
         int length = offset + match.length;
         char[] textArray = text.array;
         if (length > text.offset + text.count)
@@ -93,25 +93,25 @@ public class SyntaxUtilities {
 
         // SyntaxStyle constructor params: color, italic?, bold?
         // All need to be assigned even if not used by language (no gaps in array)
-        styles[Token.NULL] = new SyntaxStyle(Color.black, false, false);
-        styles[Token.COMMENT1] = new SyntaxStyle(new Color(0x00CC33), true, false);//(Color.black,true,false);
-        styles[Token.COMMENT2] = new SyntaxStyle(new Color(0x990033), true, false);
-        styles[Token.KEYWORD1] = new SyntaxStyle(Color.blue, false, false);//(Color.black,false,true);
-        styles[Token.KEYWORD2] = new SyntaxStyle(Color.magenta, false, false);
-        styles[Token.KEYWORD3] = new SyntaxStyle(Color.red, false, false);//(new Color(0x009600),false,false);
-        styles[Token.LITERAL1] = new SyntaxStyle(new Color(0x00CC33), false, false);//(new Color(0x650099),false,false);
-        styles[Token.LITERAL2] = new SyntaxStyle(new Color(0x00CC33), false, false);//(new Color(0x650099),false,true);
-        styles[Token.LABEL] = new SyntaxStyle(Color.black, true, false);//(new Color(0x990033),false,true);
-        styles[Token.OPERATOR] = new SyntaxStyle(Color.black, false, true);
+        styles[Token.NULL] = new SyntaxStyle(Color.white, false, false);
+        styles[Token.COMMENT1] = new SyntaxStyle(new Color(0x6A9955), true, false);// (Color.black,true,false);
+        styles[Token.COMMENT2] = new SyntaxStyle(new Color(0x6A9955), true, false);
+        styles[Token.KEYWORD1] = new SyntaxStyle(new Color(0xA695F2), false, false);// (Color.black,false,true);
+        styles[Token.KEYWORD2] = new SyntaxStyle(new Color(0xECD47C), false, false);
+        styles[Token.KEYWORD3] = new SyntaxStyle(new Color(0xF59778), false, false);
+        styles[Token.LITERAL1] = new SyntaxStyle(new Color(0xF5C378), false, false);
+        styles[Token.LITERAL2] = new SyntaxStyle(new Color(0xF5C378), false, false);// (new Color(0x650099),false,true);
+        styles[Token.LABEL] = new SyntaxStyle(new Color(0x99FF99), true, false);// (new Color(0x990033),false,true);
+        styles[Token.OPERATOR] = new SyntaxStyle(Color.white, false, true);
         styles[Token.INVALID] = new SyntaxStyle(Color.red, false, false);
-        styles[Token.MACRO_ARG] = new SyntaxStyle(new Color(150, 150, 0), false, false);
+        styles[Token.MACRO_ARG] = new SyntaxStyle(new Color(0x86B6EC), false, false);
         return styles;
     }
 
     /**
      * Returns the CURRENT style table. This can be passed to the
      * <code>setStyles()</code> method of <code>SyntaxDocument</code>
-     * to use the current syntax styles.  If changes have been made
+     * to use the current syntax styles. If changes have been made
      * via MARS Settings menu, the current settings will not be the
      * same as the default settings.
      */
@@ -133,7 +133,6 @@ public class SyntaxUtilities {
         return styles;
     }
 
-
     public static boolean popupShowing = false;
     public static Popup popup;
 
@@ -152,13 +151,13 @@ public class SyntaxUtilities {
      * @return The x co-ordinate, plus the width of the painted string
      */
     public static int paintSyntaxLine(Segment line, Token tokens,
-                                      SyntaxStyle[] styles, TabExpander expander, Graphics gfx,
-                                      int x, int y) {
+            SyntaxStyle[] styles, TabExpander expander, Graphics gfx,
+            int x, int y) {
         Font defaultFont = gfx.getFont();
         Color defaultColor = gfx.getColor();
 
         int offset = 0;
-        for (; ; ) {
+        for (;;) {
             byte id = tokens.id;
             if (id == Token.END)
                 break;
@@ -174,35 +173,37 @@ public class SyntaxUtilities {
             line.count = length;
 
             if (id == Token.KEYWORD1) {
-                //System.out.println("Instruction: "+line);
+                // System.out.println("Instruction: "+line);
                 if (!popupShowing) {// System.out.println("creating popup");
-//                   JComponent paintArea = (JComponent) expander;
-//                   JToolTip tip = paintArea.createToolTip();
-//                   tip.setTipText("Instruction: "+line);
-//                   Point screenLocation = paintArea.getLocationOnScreen();
-//                   PopupFactory popupFactory = PopupFactory.getSharedInstance();
-//                   popup = popupFactory.getPopup(paintArea, tip, screenLocation.x + x, screenLocation.y + y); 
-//                   popupShowing = true;
-//                   popup.show();
-//                   int delay = 200; //milliseconds 
-//                   ActionListener taskPerformer = 
-//                       new ActionListener() { 
-//                          public void actionPerformed(ActionEvent evt) { 
-//                            //popupShowing = false;
-//                            if (popup!= null) {
-//                               popup.hide();
-//                            }
-//                         } 
-//                      }; 
-//                   Timer popupTimer = new Timer(delay, taskPerformer);
-//                   popupTimer.setRepeats(false);
-//                   popupTimer.start();
+                    // JComponent paintArea = (JComponent) expander;
+                    // JToolTip tip = paintArea.createToolTip();
+                    // tip.setTipText("Instruction: "+line);
+                    // Point screenLocation = paintArea.getLocationOnScreen();
+                    // PopupFactory popupFactory = PopupFactory.getSharedInstance();
+                    // popup = popupFactory.getPopup(paintArea, tip, screenLocation.x + x,
+                    // screenLocation.y + y);
+                    // popupShowing = true;
+                    // popup.show();
+                    // int delay = 200; //milliseconds
+                    // ActionListener taskPerformer =
+                    // new ActionListener() {
+                    // public void actionPerformed(ActionEvent evt) {
+                    // //popupShowing = false;
+                    // if (popup!= null) {
+                    // popup.hide();
+                    // }
+                    // }
+                    // };
+                    // Timer popupTimer = new Timer(delay, taskPerformer);
+                    // popupTimer.setRepeats(false);
+                    // popupTimer.start();
 
                 }
 
                 // ToolTipManager.sharedInstance().mouseMoved(
-                //	   new MouseEvent((Component)expander, MouseEvent.MOUSE_MOVED, new java.util.Date().getTime(), 0, x, y, 0, false));
-                //    new InstructionMouseEvent((Component)expander, x, y, line));
+                // new MouseEvent((Component)expander, MouseEvent.MOUSE_MOVED, new
+                // java.util.Date().getTime(), 0, x, y, 0, false));
+                // new InstructionMouseEvent((Component)expander, x, y, line));
             }
 
             x = Utilities.drawTabbedText(line, x, y, gfx, expander, 0);

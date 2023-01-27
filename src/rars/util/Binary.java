@@ -355,7 +355,7 @@ public class Binary {
      */
     public static String intToAscii(int d) {
         StringBuilder result = new StringBuilder(8);
-        for (int i = 3; i >= 0; i--) {
+         for (int i = 0; i < 4; i++) {
             int byteValue = getByte(d, i);
             result.append((byteValue < Globals.ASCII_TABLE.length) ? Globals.ASCII_TABLE[byteValue] : Globals.ASCII_NON_PRINT);
         }
